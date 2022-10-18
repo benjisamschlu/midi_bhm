@@ -1010,13 +1010,13 @@ class: inverse, center, middle
 # Life expectancy at birth
 
 
-```{r life_exp_dist, out.width = "50%", fig.cap = "Districts, realistic disparity"}
+```{r life_exp_dist, out.width = "45%", fig.cap = "Districts, realistic disparity"}
 knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/e0_diag_dist.jpg")
 ```
 
 
 
-```{r life_exp_mun, out.width = "50%", fig.cap = "Districts, realistic disparity"}
+```{r life_exp_mun, out.width = "45%", fig.cap = "Districts, realistic disparity"}
 knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/e0_diag_mun.jpg")
 ```
 
@@ -1076,7 +1076,7 @@ class: inverse, center, middle
 .left[
 `r fontawesome::fa("at")` .link-email[[benjamin-samuel.schluter@uclouvain.be](benjamin-samuel.schluter@uclouvain.be)]
 
-`r fontawesome::fa("slideshare")` .link-email[[http://benjisamschlu.github.io/BSPS2022-models-comparison/slides.html](http://benjisamschlu.github.io/BSPS2022-models-comparison/slides.html)]
+`r fontawesome::fa("slideshare")` .link-email[[http://benjisamschlu.github.io/midi_bhm/slides.html](http://benjisamschlu.github.io/midi_bhm/slides.html)]
 
 `r fontawesome::fa("github")` .link-email[[@benjisamschlu](https://github.com/benjisamschlu)]
 ]
