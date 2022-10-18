@@ -239,8 +239,6 @@ df.bel %>%
 
 ???
 
-* Mortality age schedules inputs for demographic indicators ($e^x$ )
-
 * "Several models have been proposed to overcome these difficulties"
 
 
@@ -312,13 +310,6 @@ class: inverse, center, middle
 ] 
 
 
-???
-
-* In comparison to time that is unidimensional (models for excess mortality during COVID19)
-
-* Leave-one-out cross-validation
-
-* AIC, WAIC: out-of-sample comparison but we have all data. We care about in-"sample" accuracy
 
 ---
 
@@ -583,7 +574,7 @@ for each area over 10 years
 
 .leftcol65[
 ```{r map_hmd_ctry, fig.asp = 1, out.width = "80%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/map_be.jpg")
+knitr::include_graphics("map_be.jpg")
 
 ```
 ]
@@ -665,15 +656,7 @@ $$logit(l_x^{area}) = a + b \cdot logit(l^{prov.}_x)$$]
 
 * Spatial structure of Belgium for our simulation `r fontawesome::fa("arrow-right")` Admin1= 10 provinces, admin2= 43 districts or 581 municipalities
 
-* Our aim is to simulate mortality age schedules for each of the districts or departments
-
-* 1st step: associate to each province a mortality age schedule from a country in the HMD in 2003 for both male and female.
-
-* Countries selected such that range(e0)<5y
-
-* Slide X->Y "But our aim is to generate mortality age schedules for each department (blue boundaries)"
-
-* For each department we used the Brass relational model using as standard, the HMD country in 2003 corresponding to the region to which it belongs, to generate its survival curve and hence, its mortality age schedule (__Show on map__)
+* 1st step: associate to each province a mortality age schedule from a country in the HMD in 2003 for both male and female
 
 * a: level of mortality
 
@@ -754,11 +737,7 @@ b_{t-1}^m + \hat{drift}^m
 
 ???
 
-* ... a and b over 10 years for both gender and then, used the Brass relational model to obtain its survival curves and hence, mortality age schedules. Repeat that process for each departments.
-
-* Drift is the same for departments belonging to the same region. Improvement in mortality differs by region.
-
-* Different covariance matrices and hence, volatility in Brass parameters across regions.
+* ... a and b over __10 years__ for both gender and then, used the Brass relational model to obtain its survival curves and hence, mortality age schedules. Repeat that process for each departments
 
 
 
@@ -770,7 +749,7 @@ b_{t-1}^m + \hat{drift}^m
 * Two administrative levels: .highlight[districts] & .highlight[municipalities] 
 
 ```{r pop_sizes, fig.asp = 1, out.width = "100%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/pop_sizes.jpg")
+knitr::include_graphics("pop_sizes.jpg")
 
 ```
 
@@ -800,7 +779,7 @@ knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Socia
     * High disparity scenario: change the set of HMD countries associated to provinces and scale $\hat{\boldsymbol\Sigma}_{p[a]}$ to double observed difference in $e^0$
     
 ```{r alt_ctry, out.width="70%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/map_be_alt.jpg")
+knitr::include_graphics("map_be_alt.jpg")
 ```
     
 
@@ -983,16 +962,16 @@ class: inverse, center, middle
 # Average RMSE
 
 ```{r rmse, out.width = "100%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/rmse.jpg")
+knitr::include_graphics("rmse.jpg")
 ```
 
 
 ---
 
-# Average coverage
+# Average 95% coverage
 
 ```{r cov, out.width = "100%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/cov95.jpg")
+knitr::include_graphics("cov95.jpg")
 ```
 
 
@@ -1000,7 +979,7 @@ knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Socia
 ---
 class: inverse, center, middle
 
-# Quantities of interest in a subnational context
+# Indicators of interest in a subnational context
 
 
 
@@ -1011,13 +990,13 @@ class: inverse, center, middle
 
 
 ```{r life_exp_dist, out.width = "45%", fig.cap = "Districts, realistic disparity"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/e0_diag_dist.jpg")
+knitr::include_graphics("e0_diag_dist.jpg")
 ```
 
 
 
-```{r life_exp_mun, out.width = "45%", fig.cap = "Districts, realistic disparity"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/e0_diag_mun.jpg")
+```{r life_exp_mun, out.width = "45%", fig.cap = "Municipalities, realistic disparity"}
+knitr::include_graphics("e0_diag_mun.jpg")
 ```
 
 
@@ -1027,7 +1006,7 @@ knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Socia
 # Ranking according to life expextancy at birth
 
 ```{r life_exp, out.width = "90%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/e0.jpg")
+knitr::include_graphics("e0.jpg")
 ```
 
 
@@ -1036,19 +1015,27 @@ knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Socia
 # Ranking according to life expextancy at birth
 
 ```{r rank_e, out.width = "90%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/ranke0.jpg")
+knitr::include_graphics("ranke0.jpg")
 ```
 
+* More than 80% of expected ranks in $e^0$ are off by less than 5 position out of 43
+
+* Ranking municipalities leads to much higher difference
+
+    * Wider credible intervals for $e^0$
+    
+    * Higher number of subnational areas
 
 ---
 
 # Lifespan variation
 
-```{r lifespan_var, out.width = "90%"}
-knitr::include_graphics("../../../../Presentation/Bayesian Methods for the Social Sciences/sd.jpg")
+```{r lifespan_var, out.width = "90%", fig.cap = "Districts, realistic disparity"}
+knitr::include_graphics("sd.jpg")
 ```
 
 * Correlation = 0.84
+
 ---
 
 # Conclusions
