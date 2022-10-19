@@ -1014,7 +1014,7 @@ knitr::include_graphics("e0.jpg")
 
 # Ranking according to life expextancy at birth
 
-```{r rank_e, out.width = "90%"}
+```{r rank_e, out.width = "90%", fig.cap = "Districts, realistic disparity"}
 knitr::include_graphics("ranke0.jpg")
 ```
 
@@ -1042,9 +1042,13 @@ knitr::include_graphics("sd.jpg")
 
 * Simulation offers an interesting setup to compare models over scenarios
 
-* Simulation could be used to develop and test new small-area mortality estimation model
+* Simulation could be used to develop and test new small-area mortality estimation models
 
 * In general, BHM has a better performance in terms of average RMSE and coverage than the two other models considered
+
+* Performance of the BHM is negatively impacted by higher disparity in mortality age schedules present within the country
+
+* Incorrectly specifying the hierarchy in the BHM does not significantly affect the performance
 
 * BHM allows to reliably estimate demographic indicators at district level (life expectancy, ranking, lifespan variation) but metrics related to the overall distribution within the country are less reliable for municipalities (ranking)
 
